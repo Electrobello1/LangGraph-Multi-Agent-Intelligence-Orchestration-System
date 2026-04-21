@@ -5,7 +5,7 @@ if __name__ == "__main__":
     app = build_graph()
 
     result = app.invoke({
-        "repo_url": "https://github.com/readytensor/rt-agentic-ai-cert-week6",
+        "repo_url": "https://github.com/",
         "attempts": 0
     })
 
