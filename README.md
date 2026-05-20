@@ -130,7 +130,7 @@ cd LangGraph-Multi-Agent-Intelligence-Orchestration-System
 
 
 3. Install dependencies
-pip install requests langgraph
+pip install requirements.txt
 
 4. install ollama
    irm https://ollama.com/install.ps1 | iex
