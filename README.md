@@ -128,14 +128,16 @@ Responsible for :
 ## ⚙️ Installation
 1. Clone the repository
 git clone https://github.com/Electrobello1/LangGraph-Multi-Agent-Intelligence-Orchestration-System.git
+cd LangGraph-Multi-Agent-Intelligence-Orchestration-System
 
-2. Install dependencies
+
+3. Install dependencies
 pip install requests langgraph
 
-3. install ollama
+4. install ollama
    irm https://ollama.com/install.ps1 | iex
 
-4. Run the system
+5. Run the system
 python main.py
 
 ## 📊 Example Output
