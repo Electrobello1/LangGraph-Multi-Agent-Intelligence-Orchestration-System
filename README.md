@@ -9,6 +9,7 @@ This project implements an **agentic workflow system** that automatically:
 - Extracts meaningful metadata
 - Evaluates documentation quality
 - Generates improvement feedback
+- Allows user to interact with the system using the gpt-oss-120b cloud
 
 The system is built using a **multi-agent architecture** orchestrated with LangGraph.
 ---
@@ -22,6 +23,7 @@ The system is built using a **multi-agent architecture** orchestrated with LangG
 - 🧪 Rule-based + heuristic quality scoring
 - 🔁 Conditional retry loop (improve until pass)
 - ⚙️ Fully deterministic + extensible pipeline
+- Human in the loop with LLM
 
 ---
 ## 🏗️ Architecture
@@ -45,8 +47,6 @@ Agent          Agent           Agent
    Reviewer Agent
         ↓
      output
-        ↓
-    Human feedback
         ↓
     LLM agent
 ```
@@ -115,7 +115,7 @@ Responsible for :
 | GitHub Repository API  | Retrieve stars, forks, language    | API Integration     |
 | README Parser          | Extract title, summary, tags       | Text Processing     |
 | Quality Scoring Tool   | Evaluate documentation quality     | Analysis / Scoring  |
-
+| Ollama                 |  for  LLM inference                | API Integration     |
 ## 📦 Features
 
 - Multi-agent orchestration using LangGraph
@@ -127,13 +127,15 @@ Responsible for :
 
 ## ⚙️ Installation
 1. Clone the repository
-git clone https://github.com/your-username/repo-intelligence-agent.git
-cd repo-intelligence-agent
+git clone https://github.com/Electrobello1/LangGraph-Multi-Agent-Intelligence-Orchestration-System.git
 
 2. Install dependencies
 pip install requests langgraph
 
-3. Run the system
+3. install ollama
+   irm https://ollama.com/install.ps1 | iex
+
+4. Run the system
 python main.py
 
 ## 📊 Example Output
@@ -169,13 +171,13 @@ Run parallel agents:
    - content extraction
    - metadata extraction
    - structure validation
-↓
-Quality scoring
+   -Quality scoring
 ↓
 Final review decision
 ↓
 Output structured result
-
+↓
+HITL
 🛠️ Tech Stack
 Python 🐍
 LangGraph 🧠
@@ -196,26 +198,26 @@ Functional Multi-Agent Design
 
 ## 🚀 Future Improvements
 
-Add LLM-based semantic reviewer
+
 Improve tagging using embeddings
 Add web search tool (Tavily / SerpAPI)
 Export results as PDF report
 Build FastAPI web dashboard
 Add repository ranking system (0–100 score)
 
-## 📁 Project Structure
+
 
 ## 📁 Project Structure
 
 ```text
-repo-intelligence-agent/
+LangGraph Multi-Agent Intelligence Orchestration System/
 │
 ├── main.py            # Entry point: runs the LangGraph workflow and prints results
 ├── graph.py           # Defines and compiles the LangGraph pipeline
 ├── state.py           # Shared state schema (A3State)
 ├── agents.py          # All agent nodes (analyzer, content, metadata, reviewer, etc.)
 ├── tools.py           # External tools (GitHub API, parsing, scoring functions)
-│
+│   Model.py           # LLM model
 ├── requirements.txt   # Python dependencies
 ├── README.md          # Project documentation
 
