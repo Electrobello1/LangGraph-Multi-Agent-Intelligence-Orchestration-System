@@ -46,8 +46,6 @@ Agent          Agent           Agent
         ↓
    Reviewer Agent
         ↓
-     output
-        ↓
     LLM agent
 ```
 
